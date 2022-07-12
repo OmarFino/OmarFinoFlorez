@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const router = (0, express_1.Router)();
+const indexControllers_1 = require("../controllers/organization/indexControllers");
+const indexController_1 = require("../controllers/repository/indexController");
+router.get('/organization', indexControllers_1.getOrganizations);
+router.get('/organization/:id', indexControllers_1.getOrganizationsById);
+router.post('/postOrganization', indexControllers_1.createOrganizations);
+router.put('/organization/:id', indexControllers_1.updateOrganizations);
+router.delete('/organization/:id', indexControllers_1.deleteOrganizations);
+router.get('/repositories', indexController_1.getRepository);
+router.get('/tribeRepositories/:id', indexController_1.getRepositorysTribe);
+exports.default = router;
